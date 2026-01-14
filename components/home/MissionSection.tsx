@@ -2,7 +2,7 @@ import { Leaf, Lightbulb, ShieldCheck, Users } from "lucide-react";
 
 export const MissionSection = () => {
   return (
-    <section className="section bg-muted/40 section-pattern">
+    <section className="section bg-muted/40 dark:bg-muted/20 section-pattern">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-2 items-start">
           <div>

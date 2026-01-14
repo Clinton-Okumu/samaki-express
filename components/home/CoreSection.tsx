@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const CoreOfferingsSection = () => {
   return (
-    <section className="section bg-muted/40 section-pattern">
+    <section className="section bg-muted/40 dark:bg-muted/20 section-pattern">
       <div className="section-shell">
         <div className="max-w-2xl mb-16">
           <Badge className="eyebrow px-4 py-2">

@@ -230,6 +230,19 @@
       );
   }
 
+  .dark .section-pattern {
+    background-image: radial-gradient(
+        circle at 18% 18%,
+        oklch(0.28 0.04 230 / 0.45),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 85% 12%,
+        oklch(0.26 0.03 160 / 0.35),
+        transparent 50%
+      );
+  }
+
   .scroll-indicator {
     @apply absolute bottom-8 left-1/2 -translate-x-1/2;
     animation: float 4s ease-in-out infinite;

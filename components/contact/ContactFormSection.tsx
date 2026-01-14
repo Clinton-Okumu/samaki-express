@@ -35,7 +35,7 @@ const directContacts = [
 
 export const ContactFormSection = () => {
   return (
-    <section className="section bg-muted/40 section-pattern">
+    <section className="section bg-muted/40 dark:bg-muted/20 section-pattern">
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] items-start">
           <div>
