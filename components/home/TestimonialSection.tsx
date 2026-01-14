@@ -1,5 +1,4 @@
 import { Quote, StarIcon, CheckCircle2, Heart, Award } from "lucide-react";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -29,7 +28,6 @@ export const TestimonialsSection = () => {
             quote="Since partnering with Samaki Express, our survival rates have improved significantly. Their fingerlings are consistently healthy and fast-growing. The team's dedication to quality is unmatched."
             name="Caroline Awino"
             role="Tilapia Farmer, Kiambu"
-            image="/caroline awino.webp"
             rating={5}
             highlights={["Improved survival rates", "Quality fingerlings", "Reliable support"]}
           />
@@ -38,7 +36,6 @@ export const TestimonialsSection = () => {
             quote="The quality of feeds and technical advice has helped us scale our farm with confidence. Delivery is always on time, and their team is always available for consultations."
             name="Janeffer Nafula"
             role="Fish Farm Manager, Kisumu"
-            image="/janeffer nafula.webp"
             rating={5}
             highlights={["Premium feeds", "Expert advice", "Timely delivery"]}
           />
@@ -47,7 +44,6 @@ export const TestimonialsSection = () => {
             quote="Their training sessions gave us practical knowledge that immediately improved our pond management and yields. Our production has doubled in just six months."
             name="Vanessa Musula"
             role="Small-Scale Farmer, Siaya"
-            image="/vanessa-musula.webp"
             rating={5}
             highlights={["Practical training", "Doubled production", "Better management"]}
           />
@@ -78,14 +74,12 @@ const TestimonialCard = ({
   quote,
   name,
   role,
-  image,
   rating,
   highlights,
 }: {
   quote: string;
   name: string;
   role: string;
-  image?: string;
   rating?: number;
   highlights?: string[];
 }) => {
@@ -126,22 +120,8 @@ const TestimonialCard = ({
         )}
 
         <div className="mt-6 pt-6 border-t border-border/50 flex items-center gap-4">
-          <div className="relative">
-            {image ? (
-              <div className="relative h-16 w-16 overflow-hidden rounded-2xl ring-4 ring-background shadow-xl shadow-primary/10 group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
-                <Image
-                  src={image}
-                  alt={name}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </div>
-            ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-xl font-bold text-primary ring-4 ring-background">
-                {name.charAt(0)}
-              </div>
-            )}
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-xl font-bold text-primary ring-4 ring-background">
+            {name.charAt(0)}
           </div>
 
           <div className="flex-1">

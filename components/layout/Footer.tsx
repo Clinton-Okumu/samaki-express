@@ -3,7 +3,16 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import {
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +21,7 @@ export function Footer() {
 
   return (
     <footer className="footer-surface">
-      <div className="container mx-auto px-4 py-16 sm:py-20">
+      <div className="section-shell py-16 sm:py-20">
         <div className="grid gap-10 sm:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 font-semibold">
@@ -30,19 +39,38 @@ export function Footer() {
               technology and expert support for farmers.
             </p>
             <div className="flex gap-3 pt-2">
-              <a href="#" className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              >
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300">
+              <a
+                href="#"
+                aria-label="Twitter"
+                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              >
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="#" className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="h-9 w-9 rounded-lg bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              >
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
+            <Button asChild variant="outline" className="rounded-full">
+              <Link href="/quote">Get a Quote</Link>
+            </Button>
           </div>
 
           <div className="space-y-4">
@@ -69,13 +97,13 @@ export function Footer() {
               <li>
                 <Link href="/products" className="footer-link group">
                   <span className="w-1 h-1 rounded-full bg-primary/0 group-hover:bg-primary transition-all duration-300" />
-                  Products Shop
+                  Products
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="footer-link group">
+                <Link href="/contact" className="footer-link group">
                   <span className="w-1 h-1 rounded-full bg-primary/0 group-hover:bg-primary transition-all duration-300" />
-                  Careers
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -108,7 +136,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="text-muted-foreground break-all text-xs sm:text-sm">info@samakiexpress.com</p>
+                  <p className="text-muted-foreground break-all text-xs sm:text-sm">hello@samakiexpress.co.ke</p>
                 </div>
               </li>
             </ul>
@@ -139,8 +167,8 @@ export function Footer() {
         <div className="flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} Samaki Express EA Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+            <Link href="/products" className="hover:text-primary transition-colors">Products</Link>
           </div>
         </div>
       </div>

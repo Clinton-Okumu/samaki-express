@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, PhoneCall, XIcon } from "lucide-react";
 import * as React from "react";
 
 const navLinks = [
@@ -23,7 +23,7 @@ export function Navbar() {
 
   return (
     <header className="nav-shell shadow-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="section-shell flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Image
             src="/logo.webp"
@@ -46,6 +46,7 @@ export function Navbar() {
                   ? "nav-link-active"
                   : ""
               )}
+              aria-current={pathname === link.href ? "page" : undefined}
             >
               {link.label}
               {pathname === link.href && (
@@ -57,7 +58,17 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <div className="hidden sm:block">
+          <div className="hidden sm:flex items-center gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full px-4 text-sm"
+            >
+              <Link href="/contact" className="flex items-center gap-2">
+                <PhoneCall className="h-4 w-4" />
+                Contact
+              </Link>
+            </Button>
             <Button asChild className="rounded-full px-4 lg:px-6 text-sm shadow-sm">
               <Link href="/quote">Get a Quote</Link>
             </Button>
@@ -76,7 +87,7 @@ export function Navbar() {
 
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-background/95 backdrop-blur">
-          <nav className="container mx-auto px-4 py-4 space-y-1">
+          <nav className="section-shell py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -92,7 +103,10 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 pb-2">
+            <div className="pt-4 pb-2 grid gap-3">
+              <Button asChild variant="outline" className="w-full rounded-full">
+                <Link href="/contact">Contact</Link>
+              </Button>
               <Button asChild className="w-full rounded-full">
                 <Link href="/quote">Get a Quote</Link>
               </Button>
